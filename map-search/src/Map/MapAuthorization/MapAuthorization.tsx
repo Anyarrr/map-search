@@ -1,5 +1,6 @@
 import type { ChangeEvent, FormEvent, ReactNode } from "react";
 import { useEffect, useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import './MapAuthorization.css'; // 
 import type { InputState , FormData} from "./MapAuthorization.types";
 
@@ -8,6 +9,7 @@ import type { InputState , FormData} from "./MapAuthorization.types";
 type InputStates = Record<keyof FormData, InputState>;
 
 export const MapAuthorization = (): ReactNode => {
+    const navigate = useNavigate();
     const [formData, setFormData] = useState<FormData>({
         login: '',
         password: ''
@@ -72,7 +74,7 @@ export const MapAuthorization = (): ReactNode => {
         console.log('Логин:', formData.login);
         console.log('Пароль:', formData.password);
         
-        alert('Вход выполнен успешно');
+        navigate('/map');
       };
     
       const getInputClassName = (name: keyof FormData): string => {
