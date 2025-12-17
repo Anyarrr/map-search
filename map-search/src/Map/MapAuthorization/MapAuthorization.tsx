@@ -1,16 +1,9 @@
 import type { ChangeEvent, FormEvent, ReactNode } from "react";
 import { useEffect, useRef, useState } from "react";
 import './MapAuthorization.css'; // 
+import type { InputState , FormData} from "./MapAuthorization.types";
 
-interface FormData {
-  login: string;
-  password: string;
-}
 
-interface InputState {
-  focused: boolean;
-  hasValue: boolean;
-}
 
 type InputStates = Record<keyof FormData, InputState>;
 
