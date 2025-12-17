@@ -1,0 +1,133 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.login-container {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+    padding: 50px;
+    width: 100%;
+    max-width: 480px;
+}
+
+.login-title {
+    text-align: center;
+    color: #00209A;
+    margin-bottom: 40px;
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.form-group {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 16px 20px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: all 0.3s;
+    background-color: transparent;
+}
+
+.form-group label {
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+    color: #777;
+    font-size: 16px;
+    pointer-events: none;
+    transition: all 0.3s;
+    background-color: white;
+    padding: 0 5px;
+}
+
+.form-group input:focus {
+    border-color: #6cc100;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(108, 193, 0, 0.1);
+}
+
+.form-group input:focus + label,
+.form-group input:not(:placeholder-shown) + label {
+    top: 0;
+    font-size: 13px;
+    color: #6cc100;
+    transform: translateY(-50%);
+    background-color: white;
+    padding: 0 5px;
+}
+
+.form-group.focused label,
+.form-group.has-value label {
+    top: 0;
+    font-size: 13px;
+    color: #6cc100;
+    transform: translateY(-50%);
+    background-color: white;
+    padding: 0 5px;
+}
+
+.login-button {
+    width: 100%;
+    padding: 16px;
+    background-color: #6cc100;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 20px;
+}
+
+.login-button:hover {
+    background-color: #5ca900;
+}
+
+.login-button:active {
+    transform: translateY(1px);
+}
+
+@media (max-width: 480px) {
+    .login-container {
+        padding: 40px 25px;
+        max-width: 90%;
+    }
+    
+    .login-title {
+        font-size: 22px;
+        margin-bottom: 30px;
+    }
+    
+    .form-group input {
+        padding: 14px 18px;
+    }
+    
+    .form-group label {
+        left: 18px;
+    }
+    
+    .login-button {
+        padding: 14px;
+        font-size: 16px;
+    }
+}
